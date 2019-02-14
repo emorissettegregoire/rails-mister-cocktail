@@ -5,17 +5,23 @@ class DosesController < ApplicationController
     @dose = Dose.new
   end
 
+  # POST /cocktails/:cocktails_id/doses
   def create
     @cocktails = Cocktail.find(params[:cocktail_id]) # get cocktail object from DB
 
-    @ingredient = Ingredient.new(ingredient_params) # Create a new Ingredient object with `name`
-    @ingredient.cocktail = @cocktail # Set the ingredient `cocktail_id` to the id of the cocktail object
-    @ingredient.save
+    @dose = Dose.new(dose_params)
+    @dose.cocktail = @cocktail
+
+    if @dose.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :new
+    end
   end
 
 private
 
   def ingredient_params
-    params.require(:ingredient).permit(:name)
+    params.require(:dose).permit(:description, :ingredient_id)
   end
 end
