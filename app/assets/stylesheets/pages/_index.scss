@@ -1,3 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
 
+h1 {
+  color: $orange;
+  font-family: $headers-font;
+}
+
+h2 {
+  color: $red;
+  font-family: $headers-font;
+}
+

@@ -1,8 +1,13 @@
 <h2>Find out the secret ingredients of your favorite cocktail!</h2>
 
-  <h3><%= cocktail.ingredients %></h3>
-  <ul>
-    <li><%= dose.ingredient %></li>
-    <li><%= dose.description %></li>
-  </ul>
+<%= link_to "New dose", new_cocktail_dose_path(@cocktail) %>
 
+<h3><%= @cocktail.name %></h3>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.ingredient.name %></li>
+        <li><%= dose.description %></li>
+      <% end %>
+    </ul>
+
+<%= link_to "See more cocktails", cocktails_path%>

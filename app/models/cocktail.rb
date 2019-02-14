@@ -4,3 +4,5 @@ class Cocktail < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true
 end
+
+# for associations like cocktail.doses

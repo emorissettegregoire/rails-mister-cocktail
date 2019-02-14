@@ -16,13 +16,13 @@ Ingredient.create(name: "mint leaves")
 ]
 
 cocktails = [
-Cocktail.create(name: "Rhum and Coke"),
-Cocktail.create(name: "Martini"),
-Cocktail.create(name: "Sex on the beach")
+Cocktail.create!(name: "Rhum and Coke"),
+Cocktail.create!(name: "Martini"),
+Cocktail.create!(name: "Sex on the beach")
 ]
 
-Dose.create(description: "1 ml", ingredient: ingredients[0], cocktail: cocktails[0])
-Dose.create(description: "2 ml", ingredient: ingredients[1], cocktail: cocktails[1])
-Dose.create(description: "10 oz", ingredient: ingredients[2], cocktail: cocktails[2])
+Dose.create!(description: "1 ml of Rhum", ingredient: ingredients[0], cocktail: cocktails[0])
+Dose.create!(description: "2 ml of Gin", ingredient: ingredients[1], cocktail: cocktails[1])
+Dose.create!(description: "10 oz of White Rhum and Orange Liquor", ingredient: ingredients[2], cocktail: cocktails[2])
 
 puts 'Cocktails created'
