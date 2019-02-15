@@ -10,5 +10,8 @@
       <% end %>
     </ul>
 
-<%= link_to "See more cocktails", cocktails_path%>
+<p><%= link_to "Delete", dose_path %></p>
+
 <%= cl_image_tag @cocktail.photo, height: 300, width: 400%>
+
+<%= link_to "See more cocktails", cocktails_path%>
